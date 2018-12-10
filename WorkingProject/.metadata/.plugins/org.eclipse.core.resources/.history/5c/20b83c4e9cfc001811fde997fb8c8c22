@@ -1,0 +1,52 @@
+package ie.gmit.sw.ds.rmi;
+
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
+
+import ie.gmit.sw.ds.db.mySQL_DAO;
+import ie.gmit.sw.ds.models.Accounts;
+import ie.gmit.sw.ds.models.Booking;
+
+public class CarBookingServerImpl extends UnicastRemoteObject implements CarBookingServer {
+
+	private static final long serialVersionUID = 1L;
+
+	public CarBookingServerImpl() throws RemoteException{
+		super();
+	}
+	
+	public ArrayList<Booking> getRentals() throws RemoteException {
+		
+		ArrayList<Booking> acc = new ArrayList<>();
+		
+		acc = new mySQL_DAO().getRental();
+		
+		return acc;
+			
+	}
+	
+	@Override
+	public Boolean createAccount(Booking rentals) throws RemoteException{
+			
+		Boolean response = new mySQL_DAO().createAccount(rentals);
+		
+		if(response) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	@Override
+	public Boolean deleteBooking(Booking rentals) throws RemoteException{
+			
+		Boolean response = new mySQL_DAO().deleteBooking(rentals);
+		
+		if(response) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+}

@@ -1,0 +1,9 @@
+package ie.gmit.sw.ds.db;
+
+import java.rmi.RemoteException;
+
+public class Runner {
+	public static void main(String[] args) throws RemoteException {
+		new mySQL_DAO().getRental();
+	}
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.ws.rs.core.Response"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="ie.gmit.sw.ds.models.Booking"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="javax.ws.rs.DELETE"/>
+<fullyQualifiedTypeName name="javax.ws.rs.PUT"/>
+<fullyQualifiedTypeName name="java.rmi.RemoteException"/>
+<fullyQualifiedTypeName name="ie.gmit.sw.ds.db.mySQL_DAO"/>
+<fullyQualifiedTypeName name="com.webclient.models.Booking"/>
+<fullyQualifiedTypeName name="com.webclient.http.httpRequests"/>
+</qualifiedTypeNameHistroy>

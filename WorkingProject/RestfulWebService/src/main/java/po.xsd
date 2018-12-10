@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ds.sw.gmit.ie/models/"
+ xmlns:tns="http://ds.sw.gmit.ie/models/" elementFormDefault="qualified">
+
+<element name="booking">
+	<complexType>
+		<sequence>
+			<element name="id" type="int"/>
+			<element name="rentalDate" type="string"/>
+			<element name="returnDate" type="string"/>	
+			<element name="accounts" type="tns:accounts"/>
+			<element name="cars" type="tns:cars"/>
+		</sequence>
+		
+	</complexType>
+</element>
+   
+<complexType name="accounts">
+	<sequence>
+		<element name="acc_no" type="string"/>
+		<element name="fname" type="string"/>
+		<element name="surname" type="string"/>
+	</sequence>
+</complexType> 
+
+<complexType name="cars">
+	<sequence>
+		<element name="carMake" type="string"/>
+		<element name="carModel" type="string"/>
+	</sequence>
+</complexType>
+</schema>

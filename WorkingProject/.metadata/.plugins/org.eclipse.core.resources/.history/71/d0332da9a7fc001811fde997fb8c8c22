@@ -1,0 +1,44 @@
+package ie.gmit.sw.ds.rmi;
+
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+import ie.gmit.sw.ds.models.Booking;
+
+public class RMI_Client {
+	
+	private CarBookingServer cbs;
+	
+	public RMI_Client() throws MalformedURLException, RemoteException, NotBoundException{
+		cbs = (CarBookingServer) Naming.lookup("rmi://127.0.0.1:1099/databaseservice");
+		System.out.println("Connected..");
+	}
+
+	public ArrayList<Booking> getData() throws RemoteException {
+ 
+		ArrayList<Booking> rentals = cbs.getRentals();
+
+		System.out.println("Array List filled..");
+
+		return rentals;
+	}
+	
+	public Boolean createAccount(Booking rentals) throws RemoteException {
+		
+		Boolean check = cbs.createAccount(rentals);
+		
+		return check;
+	}
+	
+	public void deleteAccount(String value) throws RemoteException {
+		cbs.deleteAccount(value);
+	}
+
+	public void updateAccount(Booking booking) throws RemoteException {
+		cbs.updateAccount(booking);
+	}
+	
+
+}
